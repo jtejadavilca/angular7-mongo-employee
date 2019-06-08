@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+
 import { AppComponent } from './app.component';
-// import { APP_ROUTES } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
@@ -22,9 +24,10 @@ import { SearchEmployeeComponent } from './components/search-employee/search-emp
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
     AppRoutingModule,
-    HttpClientModule,
-    // APP_ROUTES
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

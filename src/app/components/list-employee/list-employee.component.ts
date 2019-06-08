@@ -32,4 +32,11 @@ export class ListEmployeeComponent implements OnInit {
   reloadData() {
     this.employees = this.employeeService.obtenerEmpleados();
   }
+
+  confirmarEditar(id) {
+    console.log('id', id);
+  }
+  confirmarEliminar(id) {
+    console.log('id', id);
+  }
 }

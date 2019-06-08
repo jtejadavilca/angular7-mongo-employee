@@ -5,13 +5,13 @@
 <div> <button type="button" class="button btn-danger" (click)='deleteEmployees()'>Delete All</button> </div> -->
 
 <table class="table table-hover">
-    <thead>
+    <thead class="thead-light">
         <tr>
-            <th scope="col">ID</th>
+            <th scope="col" class="text-center">ID</th>
             <th scope="col">NOMBRE</th>
             <th scope="col">APELLIDO</th>
             <th scope="col">EMAIL</th>
-            <th scope="col">[OPTIONS]</th>
+            <th scope="col">[ACCIONES]</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +21,10 @@
             <td>{{employee.lastName}}</td>
             <td>{{employee.email}}</td>
             <td>
-                <span class="glyphicon glyphicon-pencil"></span>
+                <button mat-icon-button color="primary" data-toggle="modal" data-target="#modalMtoEmpleado" (click)="confirmarEditar(employee.id)"><mat-icon>edit</mat-icon></button>&nbsp;
+                <button mat-icon-button color="warn" (click)="confirmarEliminar(employee.id)"><mat-icon>delete</mat-icon></button>
             </td>
         </tr>
 </table>
+
+<!-- <app-form-area [area]="area" (agregaEdita)="recargarGrilla($event)"></app-form-area> -->
