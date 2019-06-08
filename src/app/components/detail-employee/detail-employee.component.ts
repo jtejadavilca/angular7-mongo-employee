@@ -24,9 +24,10 @@ export class DetailEmployeeComponent implements OnInit {
       firstName: this.employee.firstName,
       lastName: this.employee.lastName,
       email: this.employee.email,
+      active: this.employee.active
     }).subscribe(
       data => {
-        console.log(data)
+        console.log(data);
         this.employee = data as Employee;
       },
       error => console.log(error)

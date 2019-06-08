@@ -1,10 +1,38 @@
-<div style="padding: 20px;">
+<!-- <div style="padding: 20px;">
     <h1 style="color: blue">{{title}}</h1>
     <h2>{{description}}</h2>
     <nav>
-        <a routerLink="customer" class="btn btn-primary active" role="button" routerLinkActive="active">Customers</a>
+        <a routerLink="employees" class="btn btn-primary active" role="button" routerLinkActive="active">Employees</a>
         <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
-        <a routerLink="findbyage" class="btn btn-primary active" role="button" routerLinkActive="active">Search</a>
+        <a routerLink="findByFirstName" class="btn btn-primary active" role="button" routerLinkActive="active">Search</a>
     </nav>
+    <router-outlet></router-outlet>
+</div> -->
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/employees">Listar</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="add">Crear</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="findByFirstName">Search</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
     <router-outlet></router-outlet>
 </div>

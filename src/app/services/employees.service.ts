@@ -8,13 +8,13 @@ import { HttpClient } from '@angular/common/http';
 export class EmployeesService {
 
   // baseUrl = 'http://192.168.14.121:8083';
-  baseUrl = 'http://localhost:8082';
+  baseUrl = 'http://localhost:8082/employee';
 
   constructor(private http: HttpClient) { }
 
   obtenerEmpleados(): Observable<any> {
     console.log('obtenerEmpleados');
-    const url = `${this.baseUrl}/employees`;
+    const url = `${this.baseUrl}s`;
     return this.http.get(url);
   }
 
@@ -22,7 +22,8 @@ export class EmployeesService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
   createEmployee(employee: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}` + `/employee`, employee);
+    console.log(employee);
+    return this.http.post(`${this.baseUrl}`, employee);
   }
   updateEmployee(id: string, value: any): Observable<Object> {
     return this.http.put(`${this.baseUrl}/${id}`, value);
@@ -30,9 +31,6 @@ export class EmployeesService {
   deleteEmployee(id: string): Observable<any> {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
-  // getEmployeesList(): Observable<any> {
-  //   return this.http.get(`${this.baseUrl}`);
-  // }
 
   getEmployeesByFirstName(firstName: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/firstName/${firstName}`);

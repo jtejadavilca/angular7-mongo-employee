@@ -9,7 +9,7 @@ const appRoutes: Routes = [
     { path: '', redirectTo: 'employees', pathMatch: 'full' },
     { path: 'employees', component: ListEmployeeComponent },
     { path: 'add', component: CreateEmployeeComponent },
-    { path: 'findByFirstname', component: SearchEmployeeComponent },
+    { path: 'findByFirstName', component: SearchEmployeeComponent },
     { path: '**', component: ListEmployeeComponent }
 ];
 

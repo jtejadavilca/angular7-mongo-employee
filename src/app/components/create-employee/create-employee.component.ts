@@ -15,12 +15,13 @@ export class CreateEmployeeComponent implements OnInit {
   constructor(private employeeService: EmployeesService) { }
 
   ngOnInit() {
+    this.newEmployee();
   }
 
   newEmployee(): void {
     this.submitted = false;
     this.employee = {
-      id: null,
+      id: '0',
       firstName: '',
       lastName: '',
       email: '',
@@ -35,7 +36,7 @@ export class CreateEmployeeComponent implements OnInit {
           error => console.log(error)
         );
         this.employee = {
-          id: null,
+          id: '0',
           firstName: '',
           lastName: '',
           email: '',
