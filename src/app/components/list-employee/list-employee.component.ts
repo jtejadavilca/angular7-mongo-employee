@@ -10,6 +10,13 @@ import { EmployeesService } from '../../services/employees.service';
 })
 export class ListEmployeeComponent implements OnInit {
 
+  employee: Employee = {
+    id: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    active: false
+  };
   employees: Observable<Employee[]>;
 
   constructor(private employeeService: EmployeesService) { }
@@ -33,10 +40,31 @@ export class ListEmployeeComponent implements OnInit {
     this.employees = this.employeeService.obtenerEmpleados();
   }
 
-  confirmarEditar(id) {
-    console.log('id', id);
+  recargarGrilla(event: boolean) {
+    if (event) {
+      this.reloadData();
+    }
   }
+
+
+  confirmarEditar(employee) {
+    console.log('confirm...');
+    this.employee = {
+      id: employee ? employee.id : null,
+      firstName: employee ? employee.firstName : '',
+      lastName: employee ? employee.lastName : '',
+      email: employee ? employee.email : '',
+      active: employee ? employee.active : true
+    };
+  }
+
   confirmarEliminar(id) {
-    console.log('id', id);
+    this.employeeService.deleteEmployee(id)
+    .subscribe(
+      data => {
+        console.log(data);
+        this.reloadData();
+      }, error => console.log(error));
+
   }
 }

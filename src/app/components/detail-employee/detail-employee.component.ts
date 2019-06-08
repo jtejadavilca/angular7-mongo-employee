@@ -34,7 +34,7 @@ export class DetailEmployeeComponent implements OnInit {
     );
   }
 
-  deleteCustomer() {
+  deleteEmployee() {
     this.employeeService.deleteEmployee(this.employee.id)
     .subscribe(
       data => {

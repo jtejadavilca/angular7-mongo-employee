@@ -11,7 +11,10 @@
             <th scope="col">NOMBRE</th>
             <th scope="col">APELLIDO</th>
             <th scope="col">EMAIL</th>
-            <th scope="col">[ACCIONES]</th>
+            <th scope="col">
+                [ACCIONES]
+                <button mat-icon-button style="-webkit-text-fill-color: #218838" data-toggle="modal" data-target="#modalMtoEmpleado" (click)="confirmarEditar(null)"><mat-icon>add_circle</mat-icon></button>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -21,10 +24,10 @@
             <td>{{employee.lastName}}</td>
             <td>{{employee.email}}</td>
             <td>
-                <button mat-icon-button color="primary" data-toggle="modal" data-target="#modalMtoEmpleado" (click)="confirmarEditar(employee.id)"><mat-icon>edit</mat-icon></button>&nbsp;
+                <button mat-icon-button color="primary" data-toggle="modal" data-target="#modalMtoEmpleado" (click)="confirmarEditar(employee)"><mat-icon>edit</mat-icon></button>&nbsp;
                 <button mat-icon-button color="warn" (click)="confirmarEliminar(employee.id)"><mat-icon>delete</mat-icon></button>
             </td>
         </tr>
 </table>
 
-<!-- <app-form-area [area]="area" (agregaEdita)="recargarGrilla($event)"></app-form-area> -->
+<app-form-employee [employee]="employee" (agregaEdita)="recargarGrilla($event)"></app-form-employee>
