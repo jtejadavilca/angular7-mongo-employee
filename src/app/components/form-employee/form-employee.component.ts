@@ -20,7 +20,7 @@ export class FormEmployeeComponent implements OnInit {
   }
 
   save() {
-    if (this.employee && this.employee.id) {
+    if (this.employee && this.employee.id && this.employee.id !== '0') {
       this.employeeService.updateEmployee(this.employee.id, this.employee)
           .subscribe(
             data => {

@@ -8,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
 export class EmployeesService {
 
   // baseUrl = 'http://192.168.14.121:8083';
-  baseUrl = 'http://localhost:8082/employee';
+  // baseUrl = 'http://localhost:8082/employee';
+  baseUrl = 'http://localhost:8085/rest/employee';
 
   constructor(private http: HttpClient) { }
 
